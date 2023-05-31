@@ -18,6 +18,19 @@ def affichePlateau():
     for i in range(len(plateau)):
         print (i)
 
+def affichePlateau():
+    compt = 0
+    ligne = ""
+    for i in range(len(plateau) - 1, -1, -1):
+        ligne += str(i)+" "
+        if compt % 10 == 0 :
+            print("\n")
+            print(ligne)
+            ligne =""
+        #print (i)
+        
+        compt += 1
+
 while plateau[49] == 0:
 
     affichePlateau()
@@ -33,7 +46,6 @@ while plateau[49] == 0:
     wait()
     num_de = randint(1, 6)
     print(num_de)
-    joueur2 += num_de
 
 
 
