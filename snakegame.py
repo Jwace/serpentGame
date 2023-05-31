@@ -14,9 +14,6 @@ joueur2 = 0
 def wait():
     m.getch()
 
-def affichePlateau():
-    for i in range(len(plateau)):
-        print (i)
 
 def affichePlateau():
     compt = 0
@@ -34,21 +31,15 @@ def affichePlateau():
             ligne =[]
             ligne2 = []
         #print (i)
-        ligne.append(plateau[i])
-        ligne2.append(i)
-        if joueur1 in ligne2  :
-            if joueur1 == joueur2:
-                ligne[joueur1] = 3
-            else :
-                ligne[joueur1] = 1
-                
-
-        if joueur2 in ligne2  :
-            if joueur1 == joueur2:
-                ligne[joueur1] = 3
-            else :
-                
-                ligne[joueur2] = 2
+        plateau2 = plateau
+        if joueur1 == joueur2:
+            plateau2[joueur1] = 3
+        else:
+            plateau2[joueur1] = 1
+            plateau2[joueur2] = 2
+        ligne.append(plateau2[i])
+        plateau2[joueur1] = 0
+        plateau2[joueur2] = 0
 
         
         compt += 1
@@ -59,11 +50,12 @@ def affichePlateau():
             ligne =[]
             ligne2 = []
 
-    
+
+affichePlateau()  
 
 while plateau[49] == 0:
 
-    affichePlateau()
+  
 
     print("Joueur 1 : Appuyer sur entrée pour lancer le dé")
     wait()
@@ -78,12 +70,7 @@ while plateau[49] == 0:
     wait()
     num_de = randint(1, 6)
     print(num_de)
-
-
-
-
-    affichePlateau()
-    
+    joueur2 += num_de
 
     affichePlateau()
     
