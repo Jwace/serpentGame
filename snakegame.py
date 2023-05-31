@@ -14,6 +14,9 @@ joueur2 = 0
 def wait():
     m.getch()
 
+def affichePlateau():
+    for i in range(len(plateau)):
+        print (i)
 
 def affichePlateau():
     compt = 0
@@ -75,7 +78,12 @@ while plateau[49] == 0:
     wait()
     num_de = randint(1, 6)
     print(num_de)
-    joueur2 += num_de
+
+
+
+
+    affichePlateau()
+    
 
     affichePlateau()
     
